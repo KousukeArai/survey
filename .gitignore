@@ -2,3 +2,4 @@ myvenv
 __pycache__/
 *.log
 *.pyc
+db.sqlite3
