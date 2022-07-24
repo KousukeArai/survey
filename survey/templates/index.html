@@ -5,65 +5,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO -->
-    <meta name="robots" content="noindex , nofollow" />
-
-    <!-- Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400&family=Noto+Sans:wght@100;200;300;400&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'css/resset.css'%}">
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ress.css' %}">
 
-    <title>実習生WEB知識テスト│株式会社クレアネット</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+
+    <!-- font -->
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'mvu8gqv',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>
+
+    <title>けいさんもんだい｜小学生の算数演習</title>
 </head>
 <body>
-    <div class="wrapper">
-        <header class="d-flex page-header">
+    <div class="top d-flex">
+        <!-- 共通部分 -->
+        <nav class="g-nav">
             <div class="logo">
-                <img src="images/cmm_logo.png" alt="クレアネットロゴ">
+                <a href="index.html">
+                    <img src="{% static 'img/logo.png' %}" alt="ロゴ" class="nav-logo">
+                </a>
             </div>
-            <div class="loginname"><p>テスト 太郎</p></div>
-        </header>
-        <nav class="menunav" id="menunav">
-            <div class="menudiv">
-                <ul>
-                    <!-- タイピングテスト -->
-                    <li tabindex="1">
-                        <b class="test-title">タイピングテスト</b>
-                        
-                    </li>
-                    <!-- デザインテスト -->
-                    <li tabindex="2">
-                        <b class="test-title">デザインテスト</b>
-                        
-                    </li>
-                    <!-- レイアウトテスト -->
-                    <li tabindex="3">
-                        <b class="test-title">レイアウトテスト</b>
+            <ul>
+                {% comment %} <li tabindex="1" class="grade">
+                    <a href="grade2.html">小学1年生</a>
+                </li>
+                <li tabindex="2" class="grade">
+                    <a href="grade2.html">小学2年生</a>
+                </li>
+                <li tabindex="3" class="grade grade3">
+                    <a href="grade3.html">小学3年生</a>
+                </li> {% endcomment %}
 
-                    </li>
-
-                    <!-- コーディングテスト -->
-                    <li tabindex="4">
-                      <b class="test-title"> コーディングテスト</b>
-                      
-                    </li>
-                    
-                    <!-- 完了ページ -->
-                    <li tabindex="8">
-                        
-                    </li>
-                </ul>
+                {% for grade in object_list %}
+                <li tabindex="{{ forloop.counter }}" class="grade">
+                    <a href="#">{{ grade.name }}</a>
+                </li>
+                {% endfor %}
+                <li class="grade"></li>
+            </ul>
+        </nav> <!-- 共通部分 -->
+        <!-- トップページ -->
+        <main class="top-page">
+            <div class="top-logo d-flex">
+                <img src="{% static 'img/logo.png' %}" alt="ロゴ">
             </div>
-        </nav>    
-    </div><!-- wrapper -->
-    
-    
-    
+            <div class="left-cloud d-flex">
+                <img src="{% static 'img/leftCloud.png' %}" alt="雲">
+            </div>
+            <div class="right-cloud d-flex">
+                <img src="{% static 'img/rightCloud.png' %}" alt="雲">
+            </div>
+            <div class="top-cat d-flex">
+                <img src="{% static 'img/cat_top.png' %}" alt="挑戦状と猫">
+            </div>
+            <div class="addition yurayura">
+                <img src="{% static 'img/addition.png' %}" alt="">
+            </div>
+            <div class="subtraction yurayura">
+                <img src="{% static 'img/subtraction.png' %}" alt="">
+            </div>
+            <div class ="multiplication fuwafuwa">
+                <img src="{% static 'img/multiplication.png' %}" alt="">
+            </div>
+            <div class="division fuwafuwa">
+                <img src="{% static 'img/division.png' %}" alt="">
+            </div>
+        </main>
     </div>
     
 </body>

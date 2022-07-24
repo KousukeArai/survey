@@ -8,10 +8,18 @@ from config.settings import *
 from django.urls import reverse
 from urllib.parse import urlencode
 
-class IndexView(generic.ListView):
+logger = logging.getLogger(__name__)
+
+class IndexListView(generic.ListView):
     template_name = "index.html"
     model = Grade
 
+    def get_queryset(self):
+        grades = Grade.objects.all()
+        return grades
+    
 
-class QuestionsView(generic.DetailView):
+
+class QuestionsView(generic.FormView):
     template_name = "questions.html"
+    #form_
