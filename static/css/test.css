@@ -1,0 +1,181 @@
+@charset 'UTF-8';
+
+/* resset
+--------------------------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+/* typo
+----------------------------------------------------- */
+
+body {
+    color: #333333;
+    font-family: ab-tsubaki, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.8;
+    font-feature-settings: "palt";
+    padding: 0;
+    margin: 0;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+a:active{
+    text-decoration: none;
+}
+  
+img {
+    vertical-align: bottom;
+    max-width: 100%;
+}
+  
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+}
+
+/* utility
+-------------------------------------------------- */
+.d-flex {
+    display: flex;
+}
+
+.c-font {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* layout
+--------------------------------------------------- */
+  
+/* global navigation bar */
+/* 共通部分 nav -------------------------------*/
+.g-nav {
+    background-color: #44b5ae;
+    width: 20vw;
+    height: 100vh;
+    position: fixed;
+    /* z-index: 10000; */
+}
+
+.nav-logo {
+    padding: 14px 5px ;
+}
+
+nav li {
+    width: 20vw;
+    /* padding: 14px; */
+    border-top: 1px solid #008080;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.grade {
+    width: 100%;
+}
+
+.grade3 {
+    border-bottom: #008080 1px solid;
+}
+
+.grade a{
+    color: #fff;
+    display: block;
+    width: 100%;
+    padding: 14px;
+
+}
+
+.grade a:hover{
+    background-color: #fff;
+    color: #44b5ae;
+}
+
+/* 共通部分nav ここまで ---------------------------------- */
+/* 問題ページ
+-------------------------------------------------- */
+.test-page {
+    width: 80vw;
+    overflow-y: scroll;
+    margin-left: 20px;
+    position: absolute;
+    left: 24vw;
+}
+
+.test-ttl {
+    font-size: 40px;
+}
+
+.test-description {
+    letter-spacing: 2px;
+}
+
+.question {
+    margin-top: 40px;
+}
+
+.q-txt {
+    font-size: 18px;
+}
+
+
+.answer label {
+    padding-right: 20px;
+    font-size: 14px;
+}
+
+input {
+    margin-right: 6px;
+}
+
+.number {
+    font-size: 22px;
+    padding-right: 5px;
+    font-weight: bold;
+}
+
+.text-question {
+    letter-spacing: 2px;
+}
+
+.complete {
+    margin: 60px 0;
+    justify-content: center;
+}
+
+.btn--complete,
+a.btn--complete {
+  color: #fff;
+  font-size: 20px;
+  background-color: #e86c5d;
+  padding: 18px 40px;
+}
+
+
+a.btn--radius {
+    border-radius: 100vh;
+ }
+ 
+
+footer img {
+    width:100%;
+    position: absolute;
+    bottom: -800px;
+    left: 20vw;
+}
+
+

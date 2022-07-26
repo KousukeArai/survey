@@ -1,0 +1,55 @@
+{% load static %}
+
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ress.css' %}">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+
+    <!-- font -->
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'mvu8gqv',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>
+
+    <title>けいさんもんだい｜小学生の算数演習</title>
+</head>
+<body>
+    <div class="top d-flex">
+        <!-- 共通部分 -->
+        <nav class="g-nav">
+            <div class="logo">
+                <a href="{% url 'survey:index' %}">
+                    <img src="{% static 'img/logo.png' %}" alt="ロゴ" class="nav-logo">
+                </a>
+            </div>
+            <ul>
+                <li tabindex="1" class="grade">
+                    <a href="{% url 'survey:grade1' %}">小学1年生</a>
+                </li>
+                <li tabindex="2" class="grade">
+                    <a href="{% url 'survey:grade2' %}">小学2年生</a>
+                </li>
+                <li tabindex="3" class="grade grade3">
+                    <a href="{% url 'survey:grade3' %}">小学3年生</a>
+                </li> 
+            </ul>
+        </nav> <!-- 共通部分 -->
+        {% block contents %}{% endblock %}
+
+    </div>    
+</body>
+</html>

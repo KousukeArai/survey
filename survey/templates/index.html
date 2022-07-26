@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/ress.css' %}">
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
 
     <!-- font -->
     <script>
@@ -32,27 +32,20 @@
         <!-- 共通部分 -->
         <nav class="g-nav">
             <div class="logo">
-                <a href="index.html">
+                <a href="{% url 'survey:index' %}">
                     <img src="{% static 'img/logo.png' %}" alt="ロゴ" class="nav-logo">
                 </a>
             </div>
             <ul>
-                {% comment %} <li tabindex="1" class="grade">
-                    <a href="grade2.html">小学1年生</a>
+                <li tabindex="1" class="grade">
+                    <a href="{% url 'survey:grade1' %}">小学1年生</a>
                 </li>
                 <li tabindex="2" class="grade">
-                    <a href="grade2.html">小学2年生</a>
+                    <a href="{% url 'survey:grade2' %}">小学2年生</a>
                 </li>
                 <li tabindex="3" class="grade grade3">
-                    <a href="grade3.html">小学3年生</a>
-                </li> {% endcomment %}
-
-                {% for grade in object_list %}
-                <li tabindex="{{ forloop.counter }}" class="grade">
-                    <a href="#">{{ grade.name }}</a>
-                </li>
-                {% endfor %}
-                <li class="grade"></li>
+                    <a href="{% url 'survey:grade3' %}">小学3年生</a>
+                </li> 
             </ul>
         </nav> <!-- 共通部分 -->
         <!-- トップページ -->
